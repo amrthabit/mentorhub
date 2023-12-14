@@ -10,6 +10,7 @@ import Register from "./components/Register";
 import Logout from "./components/Logout";
 import Profile from "./components/Profile";
 import Groups from "./components/Groups";
+import Tutors from "./components/Tutors";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/groups" element={<Groups />} />
+          <Route path="/tutors" element={<Tutors />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

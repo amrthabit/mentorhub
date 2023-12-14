@@ -72,14 +72,19 @@
 
       .event-info {
         .event-header {
-          display: flex;
           align-items: center;
-          margin-bottom: 1rem;
+          margin-bottom: 0.25rem;
 
           .event-name {
             font-size: 2rem;
             font-weight: 700;
             margin-right: 3rem;
+          }
+
+          .event-date {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.6;
           }
 
           .event-member-count {
