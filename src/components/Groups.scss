@@ -1,0 +1,113 @@
+.Groups {
+  .groups {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    gap: 2rem;
+
+    .group {
+      background: #eaeaea;
+      border-radius: 1rem;
+      padding: 1rem;
+
+      .group-info {
+        .group-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          .group-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-right: 3rem;
+          }
+
+          .group-member-count {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.6;
+          }
+        }
+
+        .group-desc {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+
+        button.leave {
+          margin-left: auto;
+          color: var(--error);
+          font-size: 1.25rem;
+          padding: 0rem 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.column {
+  .events {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
+
+    .event {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #000000;
+
+      .event-info {
+        .event-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          .event-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-right: 3rem;
+          }
+
+          .event-member-count {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.6;
+          }
+        }
+
+        .event-desc {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+
+        button.leave {
+          margin-left: auto;
+          color: var(--error);
+          font-size: 1.25rem;
+          padding: 0rem 0.5rem;
+        }
+      }
+    }
+  }
+}
