@@ -7,21 +7,24 @@ function Groups() {
   const dummyGroups = [
     {
       name: "Math-Bros",
-      description: "We do math together",
+      description:
+        "We do math together and are bros. Note that we don't study math, we do math.",
       memberCount: 3,
       focus: "Math, CS 2S03",
       lastMeeting: "2021-09-12",
     },
     {
       name: "Study-Buddies",
-      description: "We study together",
+      description:
+        "We study together and are buddies. If you need help, we're here for you.",
       memberCount: 2,
       focus: "CS 2S03",
       lastMeeting: "2021-09-11",
     },
     {
       name: "Science-Sisters",
-      description: "We do science together",
+      description:
+        "We do science together and are sisters. Whatelse is there to say? Whatever you need, we're here for you.",
       memberCount: 4,
       focus: "Physics, Chemistry, Biology",
       lastMeeting: "2021-09-10",
