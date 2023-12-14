@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="Home">
       <header className="header">
-        <p>Coming Soon!</p>
+        <p className="rainbow">Coming Soon!</p>
       </header>
     </div>
   );
