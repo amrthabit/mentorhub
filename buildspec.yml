@@ -1,0 +1,15 @@
+# buildspec for react app hosted on s3 with cloudfront and codebuild
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install 
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 sync build/ s3://mentorhub.amrthabit.com --delete
+      - aws cloudfront create-invalidation --distribution-id E3SI29M6RTJYKZ --paths "/*"
