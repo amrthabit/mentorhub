@@ -5,6 +5,10 @@ import "./App.scss";
 import Home from "./components/Home";
 import NotFound from "./404";
 import PageLayout from "./PageLayout";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Logout from "./components/Logout";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -12,6 +16,10 @@ function App() {
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

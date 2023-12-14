@@ -35,7 +35,7 @@ function Header() {
     <div className={`Header ${scrolled ? "scrolled" : ""}`}>
       <a className="logo-title secondary" href="/">
         <div className="logo">
-          <img src="logo.png" alt="AbdomAID logo" />
+          <img src="logo.png" alt="MentorHub logo" />
         </div>
         <span className="title">MentorHub</span>
       </a>
