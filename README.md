@@ -1,40 +1,46 @@
-# Getting Started with Create React App
+# MentorHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for [MentorHub](mentorhub.amrthabit.com), a web app for mentors and mentees to connect and learn from each other.
+It contains a simple React application utilizing SCSS for styling. The app is integrated with AWS Code Build for continuous integration and continuous deployment (CI/CD), automatically building and deploying the app to an AWS S3 bucket, with AWS CloudFront as the CDN.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js and yarn
+- Git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installing
 
-### `npm test`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/amrthabit/mentorhub.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd mentorhub
+   ```
+3. Install dependencies with Yarn:
+   ```bash
+   yarn install
+   ```
+4. Start the development server:
+   ```bash
+   yarn start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app should now be running on [http://localhost:3000](http://localhost:3000).
 
-### `npm run build`
+## Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The CI/CD pipeline is set up with AWS Cloud Build. On every push to the main branch, Cloud Build automatically builds the React app and deploys it to an Amazon S3 bucket.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [React](https://reactjs.org/) - The web framework used
+- [SCSS](https://sass-lang.com/) - Used for styling
+- [AWS CodeBuild](https://aws.amazon.com/codebuild/) - Used for CI/CD
+- [AWS S3](https://aws.amazon.com/s3/) - Used for hosting
+- [AWS CloudFront](https://aws.amazon.com/cloudfront/) - CDN service
