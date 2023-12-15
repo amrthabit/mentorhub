@@ -11,6 +11,7 @@ import Logout from "./components/Logout";
 import Profile from "./components/Profile";
 import Groups from "./components/Groups";
 import Tutors from "./components/Tutors";
+import FindGroups from "./components/FindGroups";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/groups" element={<Groups />} />
           <Route path="/tutors" element={<Tutors />} />
+          <Route path="/find-groups" element={<FindGroups />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,81 +1,19 @@
 import React from "react";
 import "./Groups.scss";
 
+import DummyData from "../dummyData";
+
+const dg = DummyData.dummyGroups;
+const de = DummyData.dummyEvents;
+const myGroups = DummyData.myGroups();
+const myEvents = DummyData.myEvents();
+
+console.log(dg);
+
+const dummyGroups = dg.filter((group, index) => myGroups.includes(index));
+const dummyEvents = de.filter((event, index) => myEvents.includes(index));
+
 function Groups() {
-  // group has name, description, member count, focus, last meeting
-
-  const dummyGroups = [
-    {
-      name: "Math-Bros",
-      description:
-        "We do math together and are bros. Note that we don't study math, we do math.",
-      memberCount: 3,
-      focus: "Math, CS 2S03",
-      lastMeeting: "2021-09-12",
-    },
-    {
-      name: "Study-Buddies",
-      description:
-        "We study together and are buddies. If you need help, we're here for you.",
-      memberCount: 2,
-      focus: "CS 2S03",
-      lastMeeting: "2021-09-11",
-    },
-    {
-      name: "Science-Sisters",
-      description:
-        "We do science together and are sisters. Whatelse is there to say? Whatever you need, we're here for you.",
-      memberCount: 4,
-      focus: "Physics, Chemistry, Biology",
-      lastMeeting: "2021-09-10",
-    },
-  ];
-
-  const dummyEvents = [
-    {
-      name: "Math-Bros",
-      date: "2021-09-12",
-      time: "12:00",
-      location: "Online",
-      description: "Algorithms and Data Structures Review",
-    },
-    {
-      name: "Math-Bros",
-      date: "2021-09-13",
-      time: "12:00",
-      location: "Online",
-      description: "Algorithms and Data Structures Practice",
-    },
-    {
-      name: "Study-Buddies",
-      date: "2021-09-14",
-      time: "12:00",
-      location: "Online",
-      description: "Game Theory Review",
-    },
-    {
-      name: "Study-Buddies",
-      date: "2021-09-15",
-      time: "12:00",
-      location: "Online",
-      description: "Game Theory Practice",
-    },
-    {
-      name: "Science-Sisters",
-      date: "2021-09-16",
-      time: "12:00",
-      location: "Online",
-      description: "Chemistry Review",
-    },
-    {
-      name: "Science-Sisters",
-      date: "2021-09-17",
-      time: "12:00",
-      location: "Online",
-      description: "Chemistry Practice",
-    },
-  ];
-
   return (
     <div className="page-column">
       <div className="Groups page">
@@ -91,8 +29,8 @@ function Groups() {
             <a href="/create-group" className="primary">
               Create Group
             </a>
-            <a href="/join-group" className="secondary">
-              Join Group
+            <a href="/find-groups" className="secondary">
+              Find Groups
             </a>
           </div>
 
@@ -117,10 +55,10 @@ function Groups() {
                       <strong>Focus:</strong> {group.focus}
                     </p>
                     <p className="group-last-meeting">
-                      <div className="footer">
+                      <span className="footer">
                         <strong>Last Meeting:</strong> {group.lastMeeting}
                         <button className="leave secondary">Leave Group</button>
-                      </div>
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -133,7 +71,7 @@ function Groups() {
         <h1>Upcoming Events</h1>
         <div className="events">
           {dummyEvents.map((event) => (
-            <div className="event" key={event.name}>
+            <div className="event" key={event.name + event.description}>
               <div className="event-info">
                 <div className="event-header">
                   <h3 className="event-name">{event.name}</h3>

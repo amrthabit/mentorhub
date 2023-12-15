@@ -1,81 +1,19 @@
 import React from "react";
 import "./Groups.scss";
+import DummyData from "../dummyData";
+
+const dt = DummyData.dummyTutors;
+const dte = DummyData.dummyTutorEvents;
+const myTutors = DummyData.myTutors();
+const myTutorEvents = DummyData.myTutorEvents();
+
+
+const dummyTutors = dt.filter((group, index) => myTutors.includes(index));
+const dummyTutorEvents = dte.filter((event, index) =>
+  myTutorEvents.includes(index)
+);
 
 function Tutors() {
-  // group has name, description, member count, focus, last meeting
-
-  const dummyTutors = [
-    {
-      name: "Paul",
-      description:
-        "I do math and cs, I'm in 4th year with a 12.0 GPA. I'm also a TA for CS 2S03 and CS 3SH3.",
-      memberCount: "",
-      focus: "CS 2S03, CS 3SH3, CS 4TB3",
-      lastMeeting: "2021-09-12",
-    },
-    {
-      name: "John",
-      description:
-        "I do physics and math, I'm in 3rd year with a 11.0 GPA. I'm also a TA for PHYSICS 1D03 and PHYSICS 1E03.",
-      memberCount: "",
-      focus: "PHYSICS 1D03, PHYSICS 1E03",
-      lastMeeting: "2021-09-12",
-    },
-    {
-      name: "Mary",
-      description:
-        "I am a graduate student in chemistry, I'm in 9th year with a 10.0 GPA. I'm also a TA for CHEM 1A03 and CHEM 1AA3.",
-      memberCount: "",
-      focus: "CHEM 1A03, CHEM 1AA3",
-      lastMeeting: "2021-09-12",
-    },
-  ];
-
-  const dummyEvents = [
-    {
-      name: "Paul",
-      date: "2021-09-12",
-      time: "12:30PM",
-      location: "ITB 137",
-      description: "Algorithms and Data Structures Review",
-    },
-    {
-      name: "John",
-      date: "2021-09-12",
-      time: "11:00AM",
-      location: "ITB 137",
-      description: "Advanded Calculus Review",
-    },
-    {
-      name: "Mary",
-      date: "2021-09-12",
-      time: "9:00AM",
-      location: "ITB 137",
-      description: "Computer Architecture Review",
-    },
-    {
-      name: "Paul",
-      date: "2021-09-12",
-      time: "12:00PM",
-      location: "ITB 137",
-      description: "Computer Graphics Problem Set",
-    },
-    {
-      name: "John",
-      date: "2021-09-12",
-      time: "3:00PM",
-      location: "ITB 137",
-      description: "Physics Exam Review",
-    },
-    {
-      name: "Mary",
-      date: "2021-09-12",
-      time: "12:00AM",
-      location: "ITB 137",
-      description: "Chemistry Exam Review",
-    },
-  ];
-
   return (
     <div className="page-column">
       <div className="Groups page">
@@ -110,12 +48,12 @@ function Tutors() {
                       <strong>Focus:</strong> {group.focus}
                     </p>
                     <p className="group-last-meeting">
-                      <div className="footer">
+                      <span className="footer">
                         <strong>Last Meeting:</strong> {group.lastMeeting}
                         <button className="leave secondary">
                           Remove Tutor
                         </button>
-                      </div>
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -127,8 +65,8 @@ function Tutors() {
       <div className="column">
         <h1>Upcoming Events</h1>
         <div className="events">
-          {dummyEvents.map((event) => (
-            <div className="event" key={event.name}>
+          {dummyTutorEvents.map((event) => (
+            <div className="event" key={event.name + event.description}>
               <div className="event-info">
                 <div className="event-header">
                   <h3 className="event-name">{event.name}</h3>
