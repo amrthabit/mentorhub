@@ -7,7 +7,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
+  // background-color: #1a242c;121f25
+  background: linear-gradient(90deg, #1a242c 0%, #101b21 100%);
   z-index: 1;
   color: var(--font-white);
   border-bottom: 1px solid #000;
@@ -71,8 +72,6 @@
     justify-content: center;
     width: 44px;
     height: 40px;
-
-
 
     .menu-icon {
       width: 36px;
