@@ -64,7 +64,6 @@
         -user-select: none;
         -webkit-user-select: none;
 
-
         input[type="checkbox"] {
           margin-right: 0rem;
           scale: 1.5;
@@ -75,40 +74,6 @@
 }
 
 .column {
-  /*<div className="column">
-        <div className="groups">
-          {foundIndices.length === 0 ? (
-            <div className="group">
-              <h2>No groups found.</h2>
-            </div>
-          ) : (
-            foundIndices.map((index) => (
-              <div className="group" key={index}>
-                <div className="group-info">
-                  <h2 className="group-name">{dummyGroups[index].name}</h2>
-                  <p className="group-description">
-                    {dummyGroups[index].description}
-                  </p>
-                  <p className="group-focus">{dummyGroups[index].focus}</p>
-                  <p className="group-last-meeting">
-                    Last Meeting: {dummyGroups[index].lastMeeting}
-                  </p>
-                </div>
-
-                <div className="group-buttons">
-                  <a className="primary" href="/groups">
-                    View
-                  </a>
-                  <a className="secondary" href="/groups">
-                    Join
-                  </a>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-      </div>**/
-
   .groups {
     display: flex;
     flex-direction: column;
@@ -140,17 +105,11 @@
         display: flex;
         align-items: center;
 
-        a.primary {
+        button.primary {
           margin-left: auto;
           font-size: 1.25rem;
           padding: 0rem 0.5rem;
           border-radius: 0.25rem;
-        }
-
-        a.secondary {
-          margin-left: 1rem;
-          font-size: 1.25rem;
-          padding: 0rem 0.5rem;
         }
       }
     }

@@ -14,6 +14,22 @@ import Tutors from "./components/Tutors";
 import FindGroups from "./components/FindGroups";
 
 function App() {
+  const myGroupsInit = [0, 1];
+  const myTutorsInit = [0, 2];
+  const myEventsInit = [0, 1, 2, 3];
+  const myTutorEventsInit = [0, 2];
+
+  React.useEffect(() => {
+    if (localStorage.getItem("myGroups")) {
+      return;
+    }
+    localStorage.setItem("myGroups", JSON.stringify(myGroupsInit));
+    localStorage.setItem("myTutors", JSON.stringify(myTutorsInit));
+    localStorage.setItem("myEvents", JSON.stringify(myEventsInit));
+    localStorage.setItem("myTutorEvents", JSON.stringify(myTutorEventsInit));
+    console.log("Initialized local storage");
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>

@@ -4,16 +4,17 @@ import DummyData from "../dummyData";
 
 const dt = DummyData.dummyTutors;
 const dte = DummyData.dummyTutorEvents;
-const myTutors = DummyData.myTutors();
-const myTutorEvents = DummyData.myTutorEvents();
-
-
-const dummyTutors = dt.filter((group, index) => myTutors.includes(index));
-const dummyTutorEvents = dte.filter((event, index) =>
-  myTutorEvents.includes(index)
-);
 
 function Tutors() {
+  const myTutors = DummyData.myTutors();
+  const myTutorEvents = DummyData.myTutorEvents();
+
+  const dummyTutors = dt.filter((group, index) => myTutors.includes(index));
+  const dummyTutorEvents = dte.filter((event, index) =>
+    myTutorEvents.includes(index)
+  );
+
+  
   return (
     <div className="page-column">
       <div className="Groups page">

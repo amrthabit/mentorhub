@@ -1,17 +1,8 @@
-const myGroupsInit = [0, 1];
-const myTutorsInit = [0, 2];
-const myEventsInit = [0, 1, 2, 3];
-const myTutorEventsInit = [0, 2];
-
-localStorage.setItem("myGroups", JSON.stringify(myGroupsInit));
-localStorage.setItem("myTutors", JSON.stringify(myTutorsInit));
-localStorage.setItem("myEvents", JSON.stringify(myEventsInit));
-localStorage.setItem("myTutorEvents", JSON.stringify(myTutorEventsInit));
-
-const myGroups = () => JSON.parse(localStorage.getItem("myGroups"));
-const myTutors = () => JSON.parse(localStorage.getItem("myTutors"));
-const myEvents = () => JSON.parse(localStorage.getItem("myEvents"));
-const myTutorEvents = () => JSON.parse(localStorage.getItem("myTutorEvents"));
+const myGroups = () => JSON.parse(localStorage.getItem("myGroups")) || [];
+const myTutors = () => JSON.parse(localStorage.getItem("myTutors")) || [];
+const myEvents = () => JSON.parse(localStorage.getItem("myEvents")) || [];
+const myTutorEvents = () =>
+  JSON.parse(localStorage.getItem("myTutorEvents")) || [];
 
 const addGroup = (newGroup) => {
   const myGroups = JSON.parse(localStorage.getItem("myGroups"));

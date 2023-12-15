@@ -3,11 +3,14 @@ import "./FindGroups.scss";
 import DummyData from "../dummyData";
 
 const dummyGroups = DummyData.dummyGroups;
+const addGroup = DummyData.addGroup;
 
 function FindGroups() {
   const [searchText, setSearchText] = React.useState("");
   const [searchFilters, setSearchFilters] = React.useState([]);
   const [foundIndices, setFoundIndices] = React.useState([]);
+
+  console.log(DummyData.myGroups());
 
   const search = () => {
     var search = searchText.toLowerCase();
@@ -163,12 +166,14 @@ function FindGroups() {
                 </div>
 
                 <div className="group-buttons">
-                  <a className="primary" href="/groups">
-                    View
-                  </a>
-                  <a className="secondary" href="/groups">
+                  <button
+                    className="primary"
+                    href="/groups"
+                    type="button"
+                    onClick={() => addGroup(index)}
+                  >
                     Join
-                  </a>
+                  </button>
                 </div>
               </div>
             ))
