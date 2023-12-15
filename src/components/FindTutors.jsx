@@ -4,11 +4,13 @@ import DummyData from "../dummyData";
 
 const dummyTutors = DummyData.dummyTutors;
 const addTutor = DummyData.addTutor;
+const myTutors = DummyData.myTutors();
 
 function FindTutors() {
   const [searchText, setSearchText] = React.useState("");
   const [searchFilters, setSearchFilters] = React.useState([]);
   const [foundIndices, setFoundIndices] = React.useState([]);
+  const [joinedTutors, setJoinedTutors] = React.useState(myTutors);
 
   const search = () => {
     var search = searchText.toLowerCase();
@@ -164,14 +166,21 @@ function FindTutors() {
                 </div>
 
                 <div className="group-buttons">
-                  <button
-                    className="primary"
-                    href="/groups"
-                    type="button"
-                    onClick={() => addTutor(index)}
-                  >
-                    Add Tutor
-                  </button>
+                  {!joinedTutors.includes(index) ? (
+                    <button
+                      className="primary"
+                      href="/groups"
+                      type="button"
+                      onClick={() => {
+                        addTutor(index);
+                        setJoinedTutors([...joinedTutors, index]);
+                      }}
+                    >
+                      Add Tutor
+                    </button>
+                  ) : (
+                    <h3 className="joined">Tutor Added</h3>
+                  )}
                 </div>
               </div>
             ))

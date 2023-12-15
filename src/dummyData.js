@@ -1,57 +1,3 @@
-const myGroups = () => JSON.parse(localStorage.getItem("myGroups")) || [];
-const myTutors = () => JSON.parse(localStorage.getItem("myTutors")) || [];
-const myEvents = () => JSON.parse(localStorage.getItem("myEvents")) || [];
-const myTutorEvents = () =>
-  JSON.parse(localStorage.getItem("myTutorEvents")) || [];
-
-const addGroup = (newGroup) => {
-  const myGroups = JSON.parse(localStorage.getItem("myGroups"));
-  myGroups.push(newGroup);
-  localStorage.setItem("myGroups", JSON.stringify(myGroups));
-};
-
-const addTutor = (newTutor) => {
-  const myTutors = JSON.parse(localStorage.getItem("myTutors"));
-  myTutors.push(newTutor);
-  localStorage.setItem("myTutors", JSON.stringify(myTutors));
-};
-
-const addEvent = (newEvent) => {
-  const myEvents = JSON.parse(localStorage.getItem("myEvents"));
-  myEvents.push(newEvent);
-  localStorage.setItem("myEvents", JSON.stringify(myEvents));
-};
-
-const addTutorEvent = (newTutorEvent) => {
-  const myTutorEvents = JSON.parse(localStorage.getItem("myTutorEvents"));
-  myTutorEvents.push(newTutorEvent);
-  localStorage.setItem("myTutorEvents", JSON.stringify(myTutorEvents));
-};
-
-const removeGroup = (groupIndex) => {
-  const myGroups = JSON.parse(localStorage.getItem("myGroups"));
-  myGroups.splice(groupIndex, 1);
-  localStorage.setItem("myGroups", JSON.stringify(myGroups));
-};
-
-const removeTutor = (tutorIndex) => {
-  const myTutors = JSON.parse(localStorage.getItem("myTutors"));
-  myTutors.splice(tutorIndex, 1);
-  localStorage.setItem("myTutors", JSON.stringify(myTutors));
-};
-
-const removeEvent = (eventIndex) => {
-  const myEvents = JSON.parse(localStorage.getItem("myEvents"));
-  myEvents.splice(eventIndex, 1);
-  localStorage.setItem("myEvents", JSON.stringify(myEvents));
-};
-
-const removeTutorEvent = (tutorEventIndex) => {
-  const myTutorEvents = JSON.parse(localStorage.getItem("myTutorEvents"));
-  myTutorEvents.splice(tutorEventIndex, 1);
-  localStorage.setItem("myTutorEvents", JSON.stringify(myTutorEvents));
-};
-
 const dummyGroups = [
   {
     name: "Math-Bros",
@@ -195,6 +141,87 @@ const dummyTutorEvents = [
     description: "Chemistry Exam Review",
   },
 ];
+
+const myGroups = () => JSON.parse(localStorage.getItem("myGroups")) || [];
+const myTutors = () => JSON.parse(localStorage.getItem("myTutors")) || [];
+const myEvents = () => JSON.parse(localStorage.getItem("myEvents")) || [];
+const myTutorEvents = () =>
+  JSON.parse(localStorage.getItem("myTutorEvents")) || [];
+
+const addGroup = (newGroup) => {
+  const myGroups = JSON.parse(localStorage.getItem("myGroups"));
+  myGroups.push(newGroup);
+  localStorage.setItem("myGroups", JSON.stringify(myGroups));
+};
+
+const addTutor = (newTutor) => {
+  const myTutors = JSON.parse(localStorage.getItem("myTutors"));
+  myTutors.push(newTutor);
+  localStorage.setItem("myTutors", JSON.stringify(myTutors));
+};
+
+const addEvent = (newEvent) => {
+  const myEvents = JSON.parse(localStorage.getItem("myEvents"));
+  const groupEvent = dummyEvents.find(
+    (event) => event.description === newEvent.description
+  );
+  const newIndex = dummyEvents.indexOf(groupEvent);
+
+  myEvents.push(newIndex);
+  localStorage.setItem("myEvents", JSON.stringify(myEvents));
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
+
+const addTutorEvent = (newTutorEvent) => {
+  const myTutorEvents = JSON.parse(localStorage.getItem("myTutorEvents"));
+  const tutorEvent = dummyTutorEvents.find(
+    (event) => event.description === newTutorEvent.description
+  );
+  const newIndex = dummyTutorEvents.indexOf(tutorEvent);
+  myTutorEvents.push(newIndex);
+  localStorage.setItem("myTutorEvents", JSON.stringify(myTutorEvents));
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
+
+const removeGroup = (groupIndex) => {
+  const myGroups = JSON.parse(localStorage.getItem("myGroups"));
+  myGroups.splice(groupIndex, 1);
+  localStorage.setItem("myGroups", JSON.stringify(myGroups));
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
+
+const removeTutor = (tutorIndex) => {
+  const myTutors = JSON.parse(localStorage.getItem("myTutors"));
+  myTutors.splice(tutorIndex, 1);
+  localStorage.setItem("myTutors", JSON.stringify(myTutors));
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
+
+const removeEvent = (eventIndex) => {
+  const myEvents = JSON.parse(localStorage.getItem("myEvents"));
+  myEvents.splice(eventIndex, 1);
+  localStorage.setItem("myEvents", JSON.stringify(myEvents));
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
+
+const removeTutorEvent = (tutorEventIndex) => {
+  const myTutorEvents = JSON.parse(localStorage.getItem("myTutorEvents"));
+  myTutorEvents.splice(tutorEventIndex, 1);
+  localStorage.setItem("myTutorEvents", JSON.stringify(myTutorEvents));
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
 
 export default {
   dummyGroups,

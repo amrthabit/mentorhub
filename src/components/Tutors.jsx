@@ -6,6 +6,7 @@ const dt = DummyData.dummyTutors;
 const dte = DummyData.dummyTutorEvents;
 const removeTutor = DummyData.removeTutor;
 const removeTutorEvent = DummyData.removeTutorEvent;
+const addTutorEvent = DummyData.addTutorEvent;
 
 function Tutors() {
   const myTutors = DummyData.myTutors();
@@ -14,6 +15,9 @@ function Tutors() {
   const dummyTutors = dt.filter((group, index) => myTutors.includes(index));
   const dummyTutorEvents = dte.filter((event, index) =>
     myTutorEvents.includes(index)
+  );
+  const dummyOtherEvents = dte.filter(
+    (event, index) => !myTutorEvents.includes(index)
   );
 
   return (
@@ -76,32 +80,73 @@ function Tutors() {
       <div className="column">
         <h1>Upcoming Events</h1>
         <div className="events">
-          {dummyTutorEvents.map((event) => (
-            <div className="event" key={event.name + event.description}>
-              <div className="event-info">
-                <div className="event-header">
-                  <h3 className="event-name">{event.name}</h3>
-                  <span className="event-date">{event.date}</span>
-                </div>
+          {(dummyTutorEvents &&
+            dummyTutorEvents.length &&
+            dummyTutorEvents.map((event) => (
+              <div className="event" key={event.name + event.description}>
+                <div className="event-info">
+                  <div className="event-header">
+                    <h3 className="event-name">{event.name}</h3>
+                    <span className="event-date">{event.date}</span>
+                  </div>
 
-                <p className="event-desc">{event.description}</p>
+                  <p className="event-desc">{event.description}</p>
+                </div>
+                <div className="event-stats">
+                  <p className="event-time">
+                    <strong>Time:</strong> {event.time}
+                  </p>
+                  <p className="event-location">
+                    <strong>Location:</strong> {event.location}
+                  </p>
+                </div>
+                <button
+                  className="leave primary"
+                  onClick={() => removeTutorEvent(event.name)}
+                >
+                  Remove Event
+                </button>
               </div>
-              <div className="event-stats">
-                <p className="event-time">
-                  <strong>Time:</strong> {event.time}
-                </p>
-                <p className="event-location">
-                  <strong>Location:</strong> {event.location}
-                </p>
-              </div>
-              <button
-                className="leave primary"
-                onClick={() => removeTutorEvent(event.name)}
-              >
-                Remove Event
-              </button>
+            ))) || (
+            <div className="event">
+              <h2>No events found.</h2>
             </div>
-          ))}
+          )}
+        </div>
+        <h1>Other Events</h1>
+        <div className="events">
+          {(dummyOtherEvents &&
+            dummyOtherEvents.length &&
+            dummyOtherEvents.map((event) => (
+              <div className="event" key={event.name + event.description}>
+                <div className="event-info">
+                  <div className="event-header">
+                    <h3 className="event-name">{event.name}</h3>
+                    <span className="event-date">{event.date}</span>
+                  </div>
+
+                  <p className="event-desc">{event.description}</p>
+                </div>
+                <div className="event-stats">
+                  <p className="event-time">
+                    <strong>Time:</strong> {event.time}
+                  </p>
+                  <p className="event-location">
+                    <strong>Location:</strong> {event.location}
+                  </p>
+                </div>
+                <button
+                  className="leave primary"
+                  onClick={() => addTutorEvent(event)}
+                >
+                  Add Event
+                </button>
+              </div>
+            ))) || (
+            <div className="event">
+              <h2>No events found.</h2>
+            </div>
+          )}
         </div>
       </div>
     </div>

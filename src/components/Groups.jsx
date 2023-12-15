@@ -1,11 +1,13 @@
 import React from "react";
 import "./Groups.scss";
 import DummyData from "../dummyData";
+import { Link } from "react-router-dom";
 
 const dg = DummyData.dummyGroups;
 const de = DummyData.dummyEvents;
 const removeGroup = DummyData.removeGroup;
 const removeEvent = DummyData.removeEvent;
+const addEvent = DummyData.addEvent;
 
 function Groups() {
   const myGroups = DummyData.myGroups();
@@ -13,6 +15,9 @@ function Groups() {
 
   const dummyGroups = dg.filter((group, index) => myGroups.includes(index));
   const dummyEvents = de.filter((event, index) => myEvents.includes(index));
+  const dummyOtherEvents = de.filter(
+    (event, index) => !myEvents.includes(index)
+  );
 
   console.log(myGroups);
   return (
@@ -104,6 +109,41 @@ function Groups() {
                   onClick={() => removeEvent(event.name)}
                 >
                   Remove Event
+                </button>
+              </div>
+            ))) || (
+            <div className="event">
+              <h3>No events found</h3>
+            </div>
+          )}
+        </div>
+        <h1>Other Events</h1>
+        <div className="events">
+          {(dummyOtherEvents &&
+            dummyOtherEvents.length &&
+            dummyOtherEvents.map((event, index) => (
+              <div className="event" key={event.name + event.description}>
+                <div className="event-info">
+                  <div className="event-header">
+                    <h3 className="event-name">{event.name}</h3>
+                    <span className="event-date">{event.date}</span>
+                  </div>
+
+                  <p className="event-desc">{event.description}</p>
+                </div>
+                <div className="event-stats">
+                  <p className="event-time">
+                    <strong>Time:</strong> {event.time}
+                  </p>
+                  <p className="event-location">
+                    <strong>Location:</strong> {event.location}
+                  </p>
+                </div>
+                <button
+                  className="leave primary"
+                  onClick={() => addEvent(event)}
+                >
+                  Add Event
                 </button>
               </div>
             ))) || (

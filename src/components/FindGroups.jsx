@@ -4,11 +4,13 @@ import DummyData from "../dummyData";
 
 const dummyGroups = DummyData.dummyGroups;
 const addGroup = DummyData.addGroup;
+const myGroups = DummyData.myGroups();
 
 function FindGroups() {
   const [searchText, setSearchText] = React.useState("");
   const [searchFilters, setSearchFilters] = React.useState([]);
   const [foundIndices, setFoundIndices] = React.useState([]);
+  const [joinedGroups, setJoinedGroups] = React.useState(myGroups);
 
   console.log(DummyData.myGroups());
 
@@ -166,14 +168,21 @@ function FindGroups() {
                 </div>
 
                 <div className="group-buttons">
-                  <button
-                    className="primary"
-                    href="/groups"
-                    type="button"
-                    onClick={() => addGroup(index)}
-                  >
-                    Join
-                  </button>
+                  {!joinedGroups.includes(index) ? (
+                    <button
+                      className="primary"
+                      href="/groups"
+                      type="button"
+                      onClick={() => {
+                        addGroup(index);
+                        setJoinedGroups([...joinedGroups, index]);
+                      }}
+                    >
+                      Join
+                    </button>
+                  ) : (
+                    <h3>Joined</h3>
+                  )}
                 </div>
               </div>
             ))
