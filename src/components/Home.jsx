@@ -5,10 +5,23 @@ import "./Home.scss";
 
 function Home() {
   return (
-    <div className="Home">
-      <header className="header">
-        <p className="rainbow">Coming Soon!</p>
-      </header>
+    <div className="Home page">
+      <div className="title-container">
+        <h1 className="title">MentorHub</h1>
+        
+        <h2 className="subtitle">
+          The best way to manage your study groups and tutoring sessions.
+        </h2>
+
+        <div className="buttons">
+          <a className="primary" href="/login">
+            Login
+          </a>
+          <a className="secondary" href="/signup">
+            Sign Up
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
