@@ -27,10 +27,7 @@ function Groups() {
           </h2>
 
           <div className="buttons">
-            <a href="/create-group" className="primary">
-              Create Group
-            </a>
-            <a href="/find-groups" className="secondary">
+            <a href="/find-groups" className="primary">
               Find Groups
             </a>
           </div>

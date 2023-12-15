@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 import Groups from "./components/Groups";
 import Tutors from "./components/Tutors";
 import FindGroups from "./components/FindGroups";
+import FindTutors from "./components/FindTutors";
 
 function App() {
   const myGroupsInit = [0, 1];
@@ -42,6 +43,7 @@ function App() {
           <Route path="/groups" element={<Groups />} />
           <Route path="/tutors" element={<Tutors />} />
           <Route path="/find-groups" element={<FindGroups />} />
+          <Route path="/find-tutors" element={<FindTutors />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
