@@ -41,9 +41,6 @@ function Header() {
       </a>
 
       <div className="links">
-        <a className="secondary" href="/">
-          Home
-        </a>
         <a className="secondary" href="/groups">
           Groups
         </a>
@@ -83,9 +80,6 @@ function Header() {
         <button className="close-menu" onClick={closeMenu} type="button">
           &times;
         </button>
-        <a className="secondary" href="/">
-          Home
-        </a>
         <a className="secondary" href="/groups">
           Groups
         </a>
