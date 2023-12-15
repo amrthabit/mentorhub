@@ -4,6 +4,8 @@ import DummyData from "../dummyData";
 
 const dt = DummyData.dummyTutors;
 const dte = DummyData.dummyTutorEvents;
+const removeTutor = DummyData.removeTutor;
+const removeTutorEvent = DummyData.removeTutorEvent;
 
 function Tutors() {
   const myTutors = DummyData.myTutors();
@@ -14,7 +16,6 @@ function Tutors() {
     myTutorEvents.includes(index)
   );
 
-  
   return (
     <div className="page-column">
       <div className="Groups page">
@@ -35,30 +36,39 @@ function Tutors() {
           <section className="section">
             <h2>My Tutors</h2>
             <div className="groups">
-              {dummyTutors.map((group) => (
-                <div className="group" key={group.name}>
-                  <div className="group-info">
-                    <div className="group-header">
-                      <h3 className="group-name">{group.name}</h3>
-                    </div>
+              {(dummyTutors &&
+                dummyTutors.length &&
+                dummyTutors.map((group) => (
+                  <div className="group" key={group.name}>
+                    <div className="group-info">
+                      <div className="group-header">
+                        <h3 className="group-name">{group.name}</h3>
+                      </div>
 
-                    <p className="group-desc">{group.description}</p>
+                      <p className="group-desc">{group.description}</p>
+                    </div>
+                    <div className="group-stats">
+                      <p className="group-focus">
+                        <strong>Focus:</strong> {group.focus}
+                      </p>
+                      <p className="group-last-meeting">
+                        <span className="footer">
+                          <strong>Last Meeting:</strong> {group.lastMeeting}
+                          <button
+                            className="leave secondary"
+                            onClick={() => removeTutor(group.name)}
+                          >
+                            Remove Tutor
+                          </button>
+                        </span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="group-stats">
-                    <p className="group-focus">
-                      <strong>Focus:</strong> {group.focus}
-                    </p>
-                    <p className="group-last-meeting">
-                      <span className="footer">
-                        <strong>Last Meeting:</strong> {group.lastMeeting}
-                        <button className="leave secondary">
-                          Remove Tutor
-                        </button>
-                      </span>
-                    </p>
-                  </div>
+                ))) || (
+                <div className="group">
+                  <h2>No tutors found.</h2>
                 </div>
-              ))}
+              )}
             </div>
           </section>
         </div>
@@ -84,6 +94,12 @@ function Tutors() {
                   <strong>Location:</strong> {event.location}
                 </p>
               </div>
+              <button
+                className="leave primary"
+                onClick={() => removeTutorEvent(event.name)}
+              >
+                Remove Event
+              </button>
             </div>
           ))}
         </div>
