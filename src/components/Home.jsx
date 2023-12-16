@@ -18,7 +18,7 @@ function Home() {
             <a className="primary" href="/login">
               Login
             </a>
-            <a className="secondary" href="/signup">
+            <a className="secondary" href="/register">
               Sign Up
             </a>
           </div>
