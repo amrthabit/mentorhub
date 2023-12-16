@@ -6,6 +6,7 @@ const dummyGroups = [
     memberCount: 3,
     focus: "Math, CS 2S03",
     lastMeeting: "2021-09-12",
+    id: 0,
   },
   {
     name: "Study-Buddies",
@@ -14,6 +15,7 @@ const dummyGroups = [
     memberCount: 2,
     focus: "CS 2S03",
     lastMeeting: "2021-09-11",
+    id: 1,
   },
   {
     name: "Science-Sisters",
@@ -22,6 +24,7 @@ const dummyGroups = [
     memberCount: 4,
     focus: "Physics, Chemistry, Biology",
     lastMeeting: "2021-09-10",
+    id: 2,
   },
 ];
 
@@ -32,6 +35,7 @@ const dummyEvents = [
     time: "12:00",
     location: "Online",
     description: "Algorithms and Data Structures Review",
+    id: 0,
   },
   {
     name: "Math-Bros",
@@ -39,6 +43,7 @@ const dummyEvents = [
     time: "12:00",
     location: "Online",
     description: "Algorithms and Data Structures Practice",
+    id: 1,
   },
   {
     name: "Study-Buddies",
@@ -46,6 +51,7 @@ const dummyEvents = [
     time: "12:00",
     location: "Online",
     description: "Game Theory Review",
+    id: 2,
   },
   {
     name: "Study-Buddies",
@@ -53,6 +59,7 @@ const dummyEvents = [
     time: "12:00",
     location: "Online",
     description: "Game Theory Practice",
+    id: 3,
   },
   {
     name: "Science-Sisters",
@@ -60,6 +67,7 @@ const dummyEvents = [
     time: "12:00",
     location: "Online",
     description: "Chemistry Review",
+    id: 4,
   },
   {
     name: "Science-Sisters",
@@ -67,6 +75,7 @@ const dummyEvents = [
     time: "12:00",
     location: "Online",
     description: "Chemistry Practice",
+    id: 5,
   },
 ];
 
@@ -78,6 +87,7 @@ const dummyTutors = [
     memberCount: "",
     focus: "CS 2S03, CS 3SH3, CS 4TB3",
     lastMeeting: "2021-09-12",
+    id: 0,
   },
   {
     name: "John",
@@ -86,6 +96,7 @@ const dummyTutors = [
     memberCount: "",
     focus: "PHYSICS 1D03, PHYSICS 1E03",
     lastMeeting: "2021-09-12",
+    id: 1,
   },
   {
     name: "Mary",
@@ -94,6 +105,7 @@ const dummyTutors = [
     memberCount: "",
     focus: "CHEM 1A03, CHEM 1AA3",
     lastMeeting: "2021-09-12",
+    id: 2,
   },
 ];
 
@@ -104,6 +116,7 @@ const dummyTutorEvents = [
     time: "12:30PM",
     location: "ITB 137",
     description: "Algorithms and Data Structures Review",
+    id: 0,
   },
   {
     name: "John",
@@ -111,6 +124,7 @@ const dummyTutorEvents = [
     time: "11:00AM",
     location: "ITB 137",
     description: "Advanded Calculus Review",
+    id: 1,
   },
   {
     name: "Mary",
@@ -118,6 +132,7 @@ const dummyTutorEvents = [
     time: "9:00AM",
     location: "ITB 137",
     description: "Computer Architecture Review",
+    id: 2,
   },
   {
     name: "Paul",
@@ -125,6 +140,7 @@ const dummyTutorEvents = [
     time: "12:00PM",
     location: "ITB 137",
     description: "Computer Graphics Problem Set",
+    id: 3,
   },
   {
     name: "John",
@@ -132,6 +148,7 @@ const dummyTutorEvents = [
     time: "3:00PM",
     location: "ITB 137",
     description: "Physics Exam Review",
+    id: 4,
   },
   {
     name: "Mary",
@@ -139,6 +156,169 @@ const dummyTutorEvents = [
     time: "12:00AM",
     location: "ITB 137",
     description: "Chemistry Exam Review",
+    id: 5,
+  },
+];
+
+const dummyGroupMessages = [
+  {
+    name: "Math-Bros",
+    id: 0,
+    messages: [
+      {
+        sender: "Paul",
+        message: "Hey guys, I'm Paul. I'm a 4th year CS student.",
+        time: "2021-09-12 12:00",
+      },
+      {
+        sender: "John",
+        message: "Hey guys, I'm John. I'm a 3rd year Math student.",
+        time: "2021-09-12 12:01",
+      },
+      {
+        sender: "Mary",
+        message: "Hey guys, I'm Mary. I'm a 2nd year Physics student.",
+        time: "2021-09-12 12:02",
+      },
+    ],
+  },
+  {
+    name: "Study-Buddies",
+    id: 1,
+    messages: [
+      {
+        sender: "Paul",
+        message: "Hey guys, I'm Paul. I'm a 4th year CS student.",
+        time: "2021-09-12 12:00",
+      },
+      {
+        sender: "John",
+        message: "Hey guys, I'm John. I'm a 3rd year Math student.",
+        time: "2021-09-12 12:01",
+      },
+    ],
+  },
+  {
+    name: "Science-Sisters",
+    id: 2,
+    messages: [
+      {
+        sender: "Paul",
+        message: "Hey guys, I'm Paul. I'm a 4th year CS student.",
+        time: "2021-09-12 12:00",
+      },
+      {
+        sender: "John",
+        message: "Hey guys, I'm John. I'm a 3rd year Math student.",
+        time: "2021-09-12 12:01",
+      },
+      {
+        sender: "Mary",
+        message: "Hey guys, I'm Mary. I'm a 2nd year Physics student.",
+        time: "2021-09-12 12:02",
+      },
+      {
+        sender: "Paul",
+        message: "I'm also a TA for CS 2S03 and CS 3SH3.",
+        time: "2021-09-12 12:03",
+      },
+      {
+        sender: "John",
+        message: "I'm also a TA for PHYSICS 1D03 and PHYSICS 1E03.",
+        time: "2021-09-12 12:04",
+      },
+      {
+        sender: "Mary",
+        message: "I'm also a TA for CHEM 1A03 and CHEM 1AA3.",
+        time: "2021-09-12 12:05",
+      },
+    ],
+  },
+];
+
+const dummyTutorMessages = [
+  {
+    name: "Paul",
+    id: 0,
+    messages: [
+      {
+        sender: "Paul",
+        message: "Hey guys, I'm Paul. I'm a 4th year CS student.",
+        time: "2021-09-12 12:00",
+      },
+      {
+        sender: "You",
+        message: "Hey Paul. I'm a 2nd year CS student.",
+        time: "2021-09-12 12:01",
+      },
+      {
+        sender: "Paul",
+        message: "Nice to meet you. What can I help you with?",
+        time: "2021-09-12 12:02",
+      },
+    ],
+  },
+  {
+    name: "John",
+    id: 1,
+    messages: [
+      {
+        sender: "John",
+        message: "Hey alex, I'm John. I'm a 3rd year Math student.",
+        time: "2021-09-12 12:00",
+      },
+      {
+        sender: "You",
+        message: "Hey John. I'm a 2nd year CS student.",
+        time: "2021-09-12 12:01",
+      },
+      {
+        sender: "John",
+        message: "Nice to meet you. What can I help you with?",
+        time: "2021-09-12 12:02",
+      },
+      {
+        sender: "You",
+        message: "I need help with CS 2S03.",
+        time: "2021-09-12 12:03",
+      },
+      {
+        sender: "John",
+        message: "Sure, I can help you with that.",
+        time: "2021-09-12 12:04",
+      },
+    ],
+  },
+  {
+    name: "Mary",
+    id: 2,
+    messages: [
+      {
+        sender: "Mary",
+        message: "Hey alex, I'm Mary. I'm a 2nd year Physics student.",
+        time: "2021-09-12 12:00",
+      },
+      {
+        sender: "You",
+        message: "Hey Mary. I'm a 2nd year CS student.",
+        time: "2021-09-12 12:01",
+      },
+      {
+        sender: "Mary",
+        message: "Nice to meet you. What can I help you with?",
+        time: "2021-09-12 12:02",
+      },
+      {
+        sender: "You",
+        message: "I need help with CS 2S03.",
+        time: "2021-09-12 12:03",
+      },
+      {
+        sender: "Mary",
+        message: "Sure, I can help you with that.",
+        time: "2021-09-12 12:04",
+      },
+    ],
   },
 ];
 
@@ -240,4 +420,6 @@ export default {
   removeTutor,
   removeEvent,
   removeTutorEvent,
+  dummyGroupMessages,
+  dummyTutorMessages,
 };

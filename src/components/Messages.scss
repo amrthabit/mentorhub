@@ -3,13 +3,110 @@
     margin-bottom: 1rem;
   }
 
+  span {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
   select {
     width: fit-content;
-    height: 3rem;
     border-radius: 0.5rem;
     border: 1px solid #eaeaea;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    background-color: #eaeaea;
+    padding: 0 0.25rem;
+    font-size: 1.25rem;
     font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  .messages {
+    display: flex;
+    border: 2px solid #eaeaea;
+    border-radius: 0.5rem;
+    background: #f1f1f1;
+    padding: 1rem;
+    margin-bottom: 20rem;
+
+    .group-list {
+      flex: 1;
+      border-right: 2px solid #eaeaea;
+
+      button {
+        display: block;
+        font-size: 1rem;
+        width: 100%;
+        text-align: left;
+
+        &:hover {
+          background: #eaeaea;
+        }
+
+        &.selected {
+          background: #cecece;
+        }
+      }
+    }
+
+    .message-list {
+      flex: 3;
+      margin-left: 1rem;
+
+      .message {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+        margin-top: 1rem;
+
+        .message-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .message-sender {
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+
+          .message-date {
+            font-size: 1.25rem;
+            font-weight: 500;
+            opacity: 0.6;
+          }
+        }
+
+        .message-body {
+          font-size: 1.25rem;
+          font-weight: 500;
+        }
+      }
+
+      .reply {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+
+        .reply-content {
+          flex: 1;
+          border-radius: 0.5rem;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+          padding: 0.5rem;
+          font-size: 1.25rem;
+          font-weight: 500;
+          resize: none;
+
+        }
+
+        .reply-button {
+          border-radius: 0.5rem;
+          border: 1px solid #eaeaea;
+          background-color: #eaeaea;
+          padding: 0.5rem;
+          font-size: 1.25rem;
+          font-weight: 500;
+        }
+      }
+    }
   }
 }

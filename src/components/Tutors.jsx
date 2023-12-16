@@ -47,6 +47,9 @@ function Tutors() {
                     <div className="group-info">
                       <div className="group-header">
                         <h3 className="group-name">{group.name}</h3>
+                        <a className="primary message-button" href="/messages">
+                          <h3>Message</h3>
+                        </a>
                       </div>
 
                       <p className="group-desc">{group.description}</p>
